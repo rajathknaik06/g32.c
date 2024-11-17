@@ -34,7 +34,11 @@ If there are no even factors present, the third line prints "Even factors: Unava
 int main() {
     int num;
     scanf("%d", &num);
+                              /*Identifying Factors:
 
+A for loop iterates from 1 to num inclusive.
+For each number i in this range, it checks if num % i == 0 (i.e., i is a factor of num).
+If true, i is printed as a factor.*/
     int i, count = 0;
     printf("Factors: ");
     for (i = 1; i <= num; i++) {
@@ -43,6 +47,12 @@ int main() {
             printf("%d ", i);
         }
     }
+    /*Identifying Odd Factors:
+
+A second loop iterates through the same range, but only prints i if:
+num % i == 0 (i.e., i is a factor) and
+i % 2 != 0 (i.e., i is odd).
+*/
 
     printf("\nOdd factors: ");
     for (i = 1; i <= num; i++) {
@@ -50,6 +60,12 @@ int main() {
             printf("%d ", i);
         }
     }
+    /*Identifying Even Factors:
+
+A third loop checks for factors as before but prints i only if:
+num % i == 0 (i.e., i is a factor) and
+i % 2 == 0 (i.e., i is even).
+A counter variable b is incremented whenever an even factor is found.*/
 
     printf("\nEven factors: ");
     int b=0;
